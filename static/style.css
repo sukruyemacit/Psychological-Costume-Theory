@@ -1,0 +1,225 @@
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 60px;
+    background: rgba(110, 15, 26, 0.95);
+    color: white;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.hero {
+    height: 100vh;
+    background: #6e0f1a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+}
+
+.scroll-indicator {
+    margin-top: 40px;
+}
+
+.flashcard-section {
+    min-height: 100vh;
+    background: #f3efe6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.card-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+    background: linear-gradient(145deg, #f3efe6, #f3efe6);
+    border: 12px solid #b84c4c;
+    border-radius: 8px;
+
+    box-shadow:
+        0 25px 60px #00000059,
+        inset 0 0 25px #ffffff4d,
+        inset 0 0 15px #0000001a;
+
+    width: fit-content; 
+}
+
+.card-frame::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 40px;
+    background: radial-gradient(rgba(0,0,0,0.25), transparent);
+    filter: blur(15px);
+}
+
+.card-container {
+    perspective: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 380px;
+    height: 520px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    cursor: pointer;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f3efe6;
+    padding: 40px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+    .card-face {
+    box-sizing: border-box;
+}
+
+.card-face img {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    background: #f3efe6
+    margin-bottom 20px;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.nav {
+    position: absolute;
+    font-size: 40px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.left { left: 10%; }
+.right { right: 10%; }
+
+.nav:hover { opacity: 0.6; }
+
+.chart-section {
+    min-height: 100vh;
+    background: #f3efe6;
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.chart-section h2 {
+    margin-bottom: 50px;
+    font-size: 32px;
+}
+
+.footer {
+    height: 40vh;
+    background: #6e0f1a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.analysis-section {
+    min-height: 100vh;
+    background: #f3efe6; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 15%;
+}
+
+.analysis-container {
+    max-width: 900px;
+    text-align: left;
+}
+
+.analysis-container h2 {
+    font-size: 34px;
+    margin-bottom: 40px;
+    color: #6e0f1a;
+}
+
+.analysis-container p {
+    font-size: 18px;
+    line-height: 1.8;
+    letter-spacing: 0.3px;
+}
+.button-74 {
+  background-color: #fbeee0;
+  border: 2px solid #570408;
+  border-radius: 30px;
+  box-shadow: #570408 4px 4px 0 0;
+  color: #570408;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0 18px;
+  line-height: 45px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: 0.2s ease;
+}
+
+.button-74:hover {
+  background-color: #065661;
+}
+
+.button-74:active {
+  box-shadow: #75060c 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+section {
+    scroll-margin-top: 120px;
+}

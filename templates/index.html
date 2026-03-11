@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Psychological Costume Theory</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">Psychological Costume Theory</div>
+
+    <div class="nav-buttons">
+        <a href="#flashcards" class="button-74">Flashcards</a>
+        <a href="#chart" class="button-74">Comparative Power Scores</a>
+        <a href="#analysis" class="button-74">Explanations</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Fashion as an Architecture of Power</h1>
+        <p>Exploring the psychological mechanisms behind historical dress</p>
+        <div class="scroll-indicator">Scroll ↓</div>
+    </div>
+</section>
+
+
+<section id="flashcards" class="flashcard-section">
+
+
+    <button class="nav left" id="prevBtn">&#8592;</button>
+
+    <div class="card-frame">
+        <div class="card-container">
+            <div class="card" id="card">
+                <div class="card-face front" id="cardFront"></div>
+                <div class="card-face back" id="cardBack"></div>
+            </div>
+        </div>
+    </div>
+
+    <button class="nav right" id="nextBtn">&#8594;</button>
+
+</section>
+
+
+<section id="chart" class="chart-section">
+
+    <h2>Comparative Power Score</h2>
+    <canvas id="powerChart"></canvas>
+</section>
+
+<section id="analysis" class="analysis-section">
+
+    <div class="analysis-container">
+        <h2>Psychological Architecture of Power in Dress</h2>
+        <p>
+        Looking at these fifteen figures, it's clear that fashion is not only used for aesthetic purposes.
+         It also plays a role as a strategic tool for psychological authority. 
+         Louis XIV's red heels artificially increased his physical height. However, actual height became a symbolic form of superiority. 
+         Queen Elizabeth I's pearl necklace, structured collar, and wide shoulders can similarly represent a presence of authority and power. 
+         Napoleon's coronation robe, military uniform and Alexander the Great's armored style represented their power.
+         Catherine de Medici's corset dress seems to reflect a sense of control over her body and the management of her impulses.
+         Cleopatra and Empress Theodora used gold and decoration to turn sacred looks into a sign of power and holiness. 
+         In ancient Rome, people wore crowns made of laurel leaves to show they had victory. When we look at Julius Caesar, 
+         the crown he wore clearly shows that he hold authority. Queen Victoria's black mourning dress, worn after she became a widow, 
+         demonstrated her devotion to her husband and thus conveyed a moral superiority. Marie Antoinette appears to have used excessive ornamentation 
+         as an aristocratic exhibit. At the same time, Coco Chanel proves that true independence can be demonstrated in simplicity. Thatcher appears to 
+         have used suit style to represent authority, which is coded as masculine. Collectively, these examples show us that fashion has psychological functions
+          related to visibility, hierarchy, gender, and power.  
+        </p>
+    </div>
+</section>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mini Puzzle 🧩</title>
+<style>
+body{
+  font-family: Arial;
+  text-align:center;
+  background:#f3efe6;
+}
+
+h2{
+  margin-top:20px;
+}
+
+#puzzle{
+  width:300px;
+  height:300px;
+  margin:20px auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:repeat(3,1fr);
+  border:2px solid #333;
+}
+
+.piece{
+  width:100px;
+  height:100px;
+  border:1px solid white;
+  background-image:url("static/images/puzzle.jpg"); 
+  background-size:300px 300px;
+  cursor:pointer;
+}
+button{
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #6e1a24;
+  background: linear-gradient(135deg, #d6b89c, #7b1f2a); 
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+button:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #c9a98b, #6e1a24); 
+}
+</style>
+</head>
+<body>
+
+<h2>Mini Puzzle 𖡎</h2>
+<div id="puzzle"></div>
+<button onclick="shufflePieces()">Shuffle</button>
+
+<script>
+const puzzle = document.getElementById("puzzle");
+const size = 3; // 3x3 puzzle
+
+let positions = [];
+for(let y=0;y<size;y++){
+  for(let x=0;x<size;x++){
+    positions.push(`${-x*100}px ${-y*100}px`);
+  }
+}
+
+function createPuzzle(){
+  puzzle.innerHTML="";
+  positions.forEach(pos=>{
+    let piece = document.createElement("div");
+    piece.className="piece";
+    piece.style.backgroundPosition = pos;
+    piece.dataset.correct = pos; 
+    piece.addEventListener("click", clickPiece);
+    puzzle.appendChild(piece);
+  });
+}
+
+function shufflePieces(){
+  let pieces = Array.from(puzzle.children);
+  pieces.sort(()=>Math.random()-0.5);
+  pieces.forEach(p=>puzzle.appendChild(p));
+}
+
+let first=null;
+
+function clickPiece(e){
+  if(!first){
+    first = this;
+    first.style.border="2px solid red";
+  } else {
+    
+    let temp = first.style.backgroundPosition;
+    first.style.backgroundPosition = this.style.backgroundPosition;
+    this.style.backgroundPosition = temp;
+    first.style.border="1px solid white";
+    first=null;
+  }
+}
+
+
+createPuzzle();
+</script>
+
+</body>
+</html>
+
+<footer class="footer">
+    <p>Psychological Costume Theory Project</p>
+    <p>sukruye macit</p>
+</footer>
+
+<script src="/static/script.js"></script>
+</body>
